@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Welcome back</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<ul class="border">
+			<li><a class="parent1" href="#">8chan</a>
+                        <!--sub menu class = dropdowns nigga-->
+				<ul class="subMenu">
+					<li><a class="tab1" href="https://8ch.net/pol">Politics</a></li>
+					<li><a class="tab1" href="https://8ch.net/tech">Technology</a></li>
+					<li><a class="tab1" href="https://8ch.net/cow">Cow</a></li>
+					<li><a class="tab1" href="https://8ch.net/baphomet">Baphomet</a></li>
+					<li><a class="tab1" href="https://8ch.net/b">Random</a></li>
+					<li><a class="tab1" href="https://8ch.net/k">Weapons</a></li>
+					<li><a class="tab1" href="https://8ch.net/rice">Rice</a></li>
+				</ul>
+			</li>
+			<li><a class="parent2" href="#">Moar Imageboards</a>
+				<ul class="subMenu">
+					<li><a class="tab2" href="https://lainchan.org/r">Lainchan Random</a></li>
+					<li><a class="tab2" href="https://lainchan.org/cyb">Lainchan Cyber</a></li>
+                                        <li><a class="tab2" href="https://lainchan.org/w">Lainchan Weeb</a></li>
+					<li><a class="tab2" href="https://boards.4chan.org/wg">4chan Wallpapers/General</a></li>
+                                        <li><a class="tab2" href="http://76chan.org/i">76chan Invasion</a></li>
+				</ul>
+			</li>
+			<li><a class="parent3" href="#">Search</a>
+				<ul class="subMenu">
+					<li><a class="tab3" href="https://startpage.com">Start Page</a></li>
+					<li><a class="tab3" href="https://searx.me">Searx</a></li>
+					<li><a class="tab3" href="https://ixquick.com">Ixquick</a></li>
+					<li><a class="tab3" href="https://duckduckgo.com">Ddg</a></li>
+					<li><a class="tab3" href="https://google.com">Google</a></li>
+				</ul>
+			</li>
+			<li><a class="parent4" href="#">News</a>
+				<ul class="subMenu">
+					<li><a class="tab4" href="https://liveleak.com">Liveleak</a></li>
+					<li><a class="tab4" href="https://bestgore.com">Best Gore</a></li>
+				</ul>
+			</li>
+		        <li><a class="parent5" href="#">Misc</a>
+                                 <ul class="subMenu">
+                                        <li><a class="tab5" href="http://pomf.se">Pomf</a></li>
+                                        <li><a class="tab5" href="https://cock.li">Cockmail</a></li>
+                                        <li><a class="tab5" href="http://whitepages.com">Whitepages</a></li>
+                                        <li><a class="tab5" href="https://pipl.com">Pipl</a></li>
+                                        <li><a class="tab5" href="https://cloud.mail.ru">Cloud</a></li>
+                                        <li><a class="tab5" href="http://dotshare.it">Dotshare</a></li>
+                                 </ul>
+                      
+                </ul>
+                <p id="time"></p>
+                <script>
+      setInterval(function(){
+      var d = new Date();
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      var dates = d.getDate();
+      var hours = d.getHours();
+      var minutes = d.getMinutes();
+      
+      if ( dates == 1 || dates == 21 || dates == 31 ){
+        dates = dates + "st";
+      } else if ( dates ==  2 || dates == 22 ){
+        dates = dates + "nd";
+      } else if ( dates ==  3 || dates == 23 ){
+        dates = dates + "rd";
+      } else {
+        dates = dates +"th";      
+      }
+      
+      
+      if  ( hours < 12 ){
+        ampm = "AM";
+      }  else {
+        hours -= 12;
+        ampm = "PM";
+      }
+      
+      if ( hours == 0 ){
+        hours = "12";
+      }
+      
+      if ( minutes < 10 ){
+        minutes = "0" + minutes;
+      }
+      document.getElementById("time").innerHTML = dates   + "  " + months[d.getMonth()] +  ",  "  +  d.getFullYear() +  "  | " +
+      hours + ":" + minutes + " " +  ampm;
+      }, 0);
+
+               </script>
+		<script>
+			$('.subMenu').hide();
+			$("li:has(ul)").click(
+				function()
+				{
+					$("ul",this).slideToggle('slow');
+				}
+			);
+		</script>
+	</body>
+</html>
